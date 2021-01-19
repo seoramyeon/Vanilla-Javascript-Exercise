@@ -1,0 +1,139 @@
+:root {
+  /* color */
+  --color-black: #3f454d;
+  --color-white: #ffffff;
+  --color-pink: #5a20cb;
+  --color-light-grey: #dfdfdf;
+
+  /* size */
+  --size-button: 50px;
+  --fontsize-title: 20px;
+  --fontsize-list: 16px;
+  --fontsize-btn: 14px;
+  --base-space: 8px;
+  --border-radius: 16px;
+  --size-thumbnail: 18px;
+
+  /* animation */
+  --ani-duration: 300ms;
+}
+
+* {
+  list-style: none;
+  box-sizing: border-box;
+}
+
+body {
+  text-align: center;
+  background-color: var(--color-light-grey);
+}
+
+.container {
+  margin-top: 16px;
+  display: inline-block;
+  position: relative;
+  background-color: var(--color-white);
+  width: 320px;
+  height: 560px;
+  border-radius: var(--border-radius);
+  box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.04), 0 6px 20px 0 rgba(0, 0, 0, 0.02);
+}
+
+.title {
+  font-size: var(--fontsize-title);
+  padding: calc(var(--base-space) * 2);
+  background-color: var(--color-pink);
+  color: var(--color-white);
+  font-weight: bold;
+  border-radius: 16px 16px 0 0;
+}
+
+.items {
+  width: 100%;
+  height: 432px;
+  padding: 0;
+  margin: 0;
+  overflow: auto;
+}
+
+.item {
+  display: flex;
+  height: 48px;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  font-size: var(--fontsize-list);
+  padding: calc(var(--base-space) * 2);
+  text-align: left;
+}
+
+.item_delete {
+  border: none;
+  outline: none;
+  cursor: pointer;
+  background-color: transparent;
+}
+
+.item_delete img {
+  width: var(--size-thumbnail);
+  transition: transform var(--ani-duration) ease-in-out;
+}
+
+.item_delete img:hover {
+  transform: scale(1.1);
+}
+
+.item_divider {
+  width: 90%;
+  height: 1px;
+  margin: auto;
+  background-color: var(--color-light-grey);
+}
+
+footer {
+  border-top: 1px solid var(--color-light-grey);
+}
+
+.input {
+  width: 248px;
+  height: 62px;
+  padding: 0 16px;
+  font-size: var(--fontsize-list);
+  position: relative;
+  border: none;
+  border-radius: 0 0 0 16px;
+  align-items: baseline;
+  outline: none;
+}
+
+.add {
+  position: relative;
+  font-size: var(--fontsize-btn);
+  width: 50px;
+  height: 48px;
+  cursor: pointer;
+  border-radius: 8px;
+  border: none;
+  outline: none;
+  background-color: var(--color-pink);
+  color: var(--color-white);
+  margin: 8px;
+  transition: transform var(--ani-duration) ease-in-out;
+}
+
+.add:hover {
+  font-weight: bold;
+  transform: scale(1.1);
+}
+
+.icons {
+  margin: 32px;
+}
+.icons,
+.icons a {
+  font-size: 12px;
+  line-height: 16px;
+  color: #989898;
+  text-decoration-style: none;
+  /* text-align: right; */
+}
