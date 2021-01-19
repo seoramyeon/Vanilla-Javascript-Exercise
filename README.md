@@ -1,1 +1,1 @@
-# pattern_cat
+# Vanilla-Javascript-Exercise
