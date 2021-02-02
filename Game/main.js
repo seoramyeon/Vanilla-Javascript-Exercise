@@ -1,6 +1,6 @@
 'use strict';
 
-const COUNT_CARROT = 5;
+const COUNT_CARROT = 10;
 const COUNT_BUG = 5;
 const GAME_DURATION_SEC = 10;
 const SIZE_CARROT = 80;
@@ -99,7 +99,7 @@ function addItem(className, count, imgPath) {
   const x1 = 0;
   const y1 = 0;
   const x2 = gameFieldRec.width - SIZE_CARROT;
-  const y2 = gameFieldRec.height - SIZE_CARROT;
+  const y2 = gameFieldRec.height - SIZE_CARROT - 28;
   console.log('x2:', x2);
   console.log('y2:', y2);
 
