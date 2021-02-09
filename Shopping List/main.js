@@ -2,6 +2,10 @@ const items = document.querySelector('.items');
 const input = document.querySelector('.input');
 const addBtn = document.querySelector('.add');
 
+let count = 0;
+const itemCount = document.querySelector('.item_count');
+itemCount.innerText = `총 ${count}개`;
+
 function onAddClick() {
   // 1. 사용자가 입력한 텍스트를 받아옴
   const text = input.value;
@@ -16,6 +20,9 @@ function onAddClick() {
 
   // 3. items 안에 새로 만든 item추가
   items.appendChild(item);
+
+  // 3.5 item개수 업데이트
+  updateItemCount();
 
   // 4. 추가된 아이템으로 스크롤링
   item.scrollIntoView({behavior:'smooth', block: 'end'});
@@ -42,9 +49,9 @@ function createItem(text) {
         <img src='./img/delete.png' alt='delete' data-id=${id + text}>
       </button>
     </div>
-    <div class="item_divider"></div>
   `
   id++;
+  count++;
   return itemRow;
 }
 
@@ -63,30 +70,12 @@ items.addEventListener('click', (event) => {
   if(id) {
     const toBeDeleted = document.querySelector(`.item_row[data-id="${id}"]`);
     toBeDeleted.remove();
+    count--;
+    updateItemCount();
     // console.log(toBeDeleted);
   }
 })
 
-/* old ver
-  const item = document.createElement('div');
-  item.setAttribute('class', 'item');
-
-  const itemName = document.createElement('span');
-  itemName.setAttribute('class', 'item_name');
-  itemName.innerText = text;
-
-  const itemDelete = document.createElement('button');
-  itemDelete.setAttribute('class', 'item_delete');
-  itemDelete.innerHTML = `<img src='./img/delete.png' alt='delete'>`
-  itemDelete.addEventListener('click', () => {
-    items.removeChild(itemRow);
-  })
-
-  const itemDivider = document.createElement('div')
-  itemDivider.setAttribute('class', 'item_divider');
-
-  item.appendChild(itemName);
-  item.appendChild(itemDelete);
-  itemRow.appendChild(item);
-  itemRow.appendChild(itemDivider);
-  */
+function updateItemCount() {
+  itemCount.innerText = `총 ${count}개`;
+}

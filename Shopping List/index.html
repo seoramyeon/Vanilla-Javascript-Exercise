@@ -6,10 +6,21 @@
   <title>Shopping List</title>
   <script src='./main.js' defer></script>
   <link rel="stylesheet" href="style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;500;700&display=swap" rel="stylesheet">
 </head> 
 <body>
 	<section class="container">
-    <header class="title">Shopping List</header>
+    <header>
+      <img src="./img/icon_status.png" alt="status" class="status">
+      <div class="title">
+        <div>
+          <img src="./img/icon_cart.png" alt="icon" class="icon">
+          <span>나의 장바구니</span>
+        </div>
+        <img src="./img/img_profile.png" alt="profile" class="profile">
+      </div>
+    </header>
+    <div class="item_count"></div>
     <ul class="items">
       <!-- <li class="item_row">
         <div class="item">
@@ -20,12 +31,18 @@
       </li> -->
     </ul>
     <footer>
-      <input 
+      <div>
+        <input 
       class='input' 
       type="text" 
-      placeholder="Add a new item" />
-    <button type='submit' class='add'>Add</button>
+      placeholder="아이템을 입력하세요" />
+      <button type='submit' class='add'>
+        <img src="./img/icon_add.png" alt="add_icon" class="btn_icon">
+      </button>
+      </div>
+      <span class="bar"></span>
     </footer>
+   
   </section>
   <div class='icons'>
     Icons made by <a href="https://www.flaticon.com/authors/kiranshastry" title="Kiranshastry">Kiranshastry</a>

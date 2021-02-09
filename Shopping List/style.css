@@ -1,11 +1,11 @@
-@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,300;0,400;1,300&display=swap');
-
 :root {
   /* color */
-  --color-black: #3f454d;
+  --color-black: #000000;
+  --color-dark: #3f454d;
   --color-white: #ffffff;
-  --color-pink: #5a20cb;
+  --color-blue: #007aff;
   --color-light-grey: #dfdfdf;
+  --color-light-blue: #eaf2f8;
 
   /* size */
   --size-button: 50px;
@@ -28,47 +28,81 @@
 body {
   font-family: 'Roboto', sans-serif;
   text-align: center;
-  background-color: var(--color-light-grey);
+  background-color: var(--color-dark);
 }
 
 .container {
   margin-top: 16px;
   display: inline-block;
   position: relative;
-  background-color: var(--color-white);
-  width: 320px;
-  height: 560px;
-  border-radius: var(--border-radius);
-  box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.04), 0 6px 20px 0 rgba(0, 0, 0, 0.02);
+  background-color: var(--color-light-blue);
+  width: 375px;
+  height: 720px;
+  border-radius: calc(var(--border-radius) * 2);
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.04), 0 2px 4px 0 rgba(0, 0, 0, 1);
+}
+
+header {
+  height: 140px;
+  font-size: var(--fontsize-title);
+  /* padding: calc(var(--base-space) * 2); */
+  /* background-color: var(--color-pink); */
+  color: var(--color-black);
+  font-weight: bold;
+  border-radius: 32px 32px 0 0;
+}
+
+header .status {
+  width: 100%;
 }
 
 .title {
-  font-size: var(--fontsize-title);
-  padding: calc(var(--base-space) * 2);
-  background-color: var(--color-pink);
-  color: var(--color-white);
-  font-weight: bold;
-  border-radius: 16px 16px 0 0;
+  height: 80px;
+  padding: 0 18px;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  font-size: 28px;
+}
+
+.title .icon {
+  width: 24px;
+  height: 24px;
+}
+
+.profile {
+  width: 48px;
+  height: 48px;
+}
+
+.item_count {
+  font-size: 12px;
+  text-align: left;
+  margin: 8px 24px;
+  color: var(--color-dark);
 }
 
 .items {
   width: 100%;
-  height: 434px;
-  padding: 0;
+  height: 440px;
+  padding: 8px 16px;
   margin: 0;
   overflow: auto;
-  background-color: rgb(246, 246, 252);
 }
 
 .item {
+  margin-bottom: 8px;
   display: flex;
-  height: 48px;
+  height: 60px;
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
   font-size: var(--fontsize-list);
   padding: calc(var(--base-space) * 2);
+  background-color: rgb(246, 246, 252);
+  border-radius: var(--border-radius);
   text-align: left;
+  box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.04), 0 6px 20px 0 rgba(0, 0, 0, 0.02);
 }
 
 .item_delete {
@@ -80,6 +114,7 @@ body {
 
 .item_delete img {
   width: var(--size-thumbnail);
+  opacity: 0.7;
   transition: transform var(--ani-duration) ease-in-out;
 }
 
@@ -87,25 +122,23 @@ body {
   transform: scale(1.1);
 }
 
-.item_divider {
-  width: 90%;
-  height: 1px;
-  margin: auto;
-  background-color: var(--color-light-grey);
-}
-
-footer {
+footer div {
+  height: 110px;
   border-top: 1px solid var(--color-light-grey);
+  display: flex;
+  padding: 16px;
+  background-color: rgba(255, 255, 255, 0.5);
+  border-radius: 0 0 32px 32px;
 }
 
 .input {
-  width: 248px;
-  height: 62px;
+  width: 287px;
+  height: 48px;
   padding: 0 16px;
   font-size: var(--fontsize-list);
   position: relative;
-  border: none;
-  border-radius: 0 0 0 16px;
+  border: 1px solid var(--color-light-grey);
+  border-radius: 8px;
   align-items: baseline;
   outline: none;
 }
@@ -113,19 +146,24 @@ footer {
 .add {
   position: relative;
   font-size: var(--fontsize-btn);
-  width: 50px;
+  width: 48px;
   height: 48px;
   cursor: pointer;
   border-radius: 8px;
-  border: none;
+  border: 1px solid #0071ed;
   outline: none;
-  background-color: var(--color-pink);
+  background-color: var(--color-blue);
   color: var(--color-white);
-  margin: 8px;
+  margin-left: 8px;
+}
+
+.add .btn_icon {
+  width: 24px;
+  height: 24px;
   transition: transform var(--ani-duration) ease-in-out;
 }
 
-.add:hover {
+.add .btn_icon:hover {
   font-weight: bold;
   transform: scale(1.1);
 }
@@ -140,4 +178,14 @@ footer {
   color: #989898;
   text-decoration-style: none;
   /* text-align: right; */
+}
+
+footer .bar {
+  position: absolute;
+  bottom: 8px;
+  left: 121px;
+  width: 134px;
+  height: 5px;
+  border-radius: 2.5px;
+  background-color: var(--color-dark);
 }
