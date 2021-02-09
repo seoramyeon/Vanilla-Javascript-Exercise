@@ -3,9 +3,9 @@
   --color-black: #000000;
   --color-dark: #3f454d;
   --color-white: #ffffff;
-  --color-blue: #007aff;
-  --color-light-grey: #dfdfdf;
-  --color-light-blue: #eaf2f8;
+  --color-blue: #2962ff;
+  --color-light-grey: #b1bfca;
+  --color-light-blue: #e3f2fd;
 
   /* size */
   --size-button: 50px;
@@ -28,7 +28,7 @@
 body {
   font-family: 'Roboto', sans-serif;
   text-align: center;
-  background-color: var(--color-dark);
+  background-color: #373737;
 }
 
 .container {
@@ -45,8 +45,6 @@ body {
 header {
   height: 140px;
   font-size: var(--fontsize-title);
-  /* padding: calc(var(--base-space) * 2); */
-  /* background-color: var(--color-pink); */
   color: var(--color-black);
   font-weight: bold;
   border-radius: 32px 32px 0 0;
@@ -102,7 +100,9 @@ header .status {
   background-color: rgb(246, 246, 252);
   border-radius: var(--border-radius);
   text-align: left;
-  box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.04), 0 6px 20px 0 rgba(0, 0, 0, 0.02);
+  /* box-shadow: 0 4px 16px 0 rgba(0, 0, 0, 0.04), 0 4px 16px 0 rgba(0, 0, 0, 0.04); */
+  -webkit-box-shadow: 8px 8px 16px 1px rgba(0, 0, 0, 0.1);
+  box-shadow: 8px 8px 16px 1px rgba(0, 0, 0, 0.1);
 }
 
 .item_delete {
@@ -150,9 +150,9 @@ footer div {
   height: 48px;
   cursor: pointer;
   border-radius: 8px;
-  border: 1px solid #0071ed;
+  border: 1px solid #1b1b1b;
   outline: none;
-  background-color: var(--color-blue);
+  background-color: #212121;
   color: var(--color-white);
   margin-left: 8px;
 }
